@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Star Processing</title>
+  <meta name="description" content="Over 20 years of experience in mortgage, real estate, and title — built into every file we process." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;450;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="2.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .about-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    @media (max-width: 880px) {
+      .about-hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    }
+    .portrait-frame {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      max-width: 480px;
+      margin-left: auto;
+      box-shadow: 0 40px 80px -30px rgba(26, 34, 24, 0.25);
+    }
+    @media (max-width: 880px) {
+      .portrait-frame { margin: 0 auto; }
+    }
+    .portrait-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .portrait-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.15);
+      pointer-events: none;
+    }
+    .portrait-decor {
+      position: absolute;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--gold-warm) 0%, transparent 70%);
+      filter: blur(40px);
+      opacity: 0.5;
+      z-index: -1;
+      animation: float 20s var(--ease) infinite;
+    }
+    .portrait-decor.one { top: -30px; left: -50px; }
+    .portrait-decor.two { bottom: -40px; right: -40px; background: radial-gradient(circle, var(--sage-soft) 0%, transparent 70%); animation-duration: 24s; animation-delay: -6s; }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 80px;
+      padding-top: 60px;
+      border-top: 1px solid var(--line-strong);
+    }
+    @media (max-width: 760px) {
+      .about-stats { grid-template-columns: 1fr 1fr; gap: 32px 16px; }
+    }
+    .stat-num {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .stat-num .accent {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--gold-deep);
+    }
+    .stat-label {
+      margin-top: 8px;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="brand" aria-label="Star Processing">
+          <img src="1.png" alt="Star Processing & Compliance Services" class="brand-logo" />
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html#submit-loan" class="nav-cta">Submit a Loan</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="contact.html">Contact</a>
+    <div class="mobile-ctas">
+      <a href="contact.html#submit-loan" class="btn btn-primary">Submit a Loan</a>
+      <a href="contact.html" class="btn btn-secondary">Schedule a Call</a>
+    </div>
+  </div>
+
+  <!-- ============ ABOUT HERO ============ -->
+  <header class="page-hero" style="padding-bottom: 40px;">
+    <div class="page-hero-bg"></div>
+    <div class="container">
+      <div class="about-hero-grid">
+        <div>
+          <span class="eyebrow reveal">About Stephenie Tocado · Owner</span>
+          <h1 class="reveal delay-1">Two decades of mortgage. <span class="serif-accent">One standard of care.</span></h1>
+          <p class="lede reveal delay-2" style="margin-top: 24px;">
+            Star Processing was founded by Stephenie Tocado to give loan officers and brokers a reliable, detail-driven partner — built on real estate, title, and processing experience accumulated since 2002.
+          </p>
+        </div>
+
+        <div class="reveal delay-2" style="position: relative;">
+          <div class="portrait-decor one"></div>
+          <div class="portrait-decor two"></div>
+          <div class="portrait-frame">
+            <img src="Professional portrait with a warm smile.png" alt="Founder of Star Processing" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ NARRATIVE ============ -->
+  <section style="padding-top: 60px;">
+    <div class="container-tight">
+      <div class="about-narrative reveal" style="margin: 0 auto;">
+        <p>
+          With over 20 years of experience in the mortgage and real estate industry, I bring a comprehensive understanding of the loan process from <span class="accent">application to closing</span>.
+        </p>
+        <p>
+          Since 2002, I have worked across mortgage, real estate, and title — giving me a unique ability to manage every aspect of the transaction efficiently and effectively. I understand how each piece of the process connects, and how to keep everything moving toward a successful closing.
+        </p>
+        <p>
+          I have experience with all major loan types, including conventional, FHA, VA, jumbo, non-QM, and equity lines, allowing me to step into any file with confidence and precision.
+        </p>
+        <p>
+          In addition to loan processing, I assist mortgage professionals with compliance-related tasks, including quarterly and annual call reports and maintaining organization for NMLS and state regulatory requirements.
+        </p>
+        <p>
+          I founded Star Processing to provide a reliable, detail-driven solution for loan officers and brokers who want to grow their business <span class="accent">without sacrificing service, efficiency, or compliance</span>.
+        </p>
+        <p>
+          My approach is proactive, communicative, and focused on delivering smooth, on-time closings while protecting your client relationships and reputation.
+        </p>
+
+        <div style="margin-top: 48px; padding-top: 36px; border-top: 1px solid var(--line-strong); display: flex; align-items: center; gap: 18px;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#A8884A" stroke-width="1.2"><path d="M12 2 L13 11 L22 12 L13 13 L12 22 L11 13 L2 12 L11 11 Z" fill="#C9A961" stroke="none"/></svg>
+          <div>
+            <div style="font-family: var(--font-serif); font-style: italic; font-size: 1.7rem; color: var(--gold-deep); font-weight: 500; line-height: 1;">Stephenie Tocado</div>
+            <div style="font-size: 13px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 8px;">Owner · Founder, Star Processing</div>
+            <div style="font-size: 14px; color: var(--muted); margin-top: 14px;">
+              <a href="mailto:Stephenie@star-processing.com" style="color: var(--ink); border-bottom: 1px solid var(--line-strong); padding-bottom: 1px;">Stephenie@star-processing.com</a>
+              &nbsp;·&nbsp;
+              <a href="tel:+17046613414" style="color: var(--ink); border-bottom: 1px solid var(--line-strong); padding-bottom: 1px;">704-661-3414</a>
+              &nbsp;·&nbsp;
+              NMLS #2636616
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-stats reveal">
+        <div>
+          <div class="stat-num"><span class="accent">20</span>+</div>
+          <div class="stat-label">Years experience</div>
+        </div>
+        <div>
+          <div class="stat-num">2002</div>
+          <div class="stat-label">In the industry since</div>
+        </div>
+        <div>
+          <div class="stat-num">All</div>
+          <div class="stat-label">Major loan types</div>
+        </div>
+        <div>
+          <div class="stat-num">NC &amp; SC</div>
+          <div class="stat-label">Licensed coverage</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VALUES ============ -->
+  <section class="section-warm">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">How we work</span>
+        <h2 class="section-title">A standard you can <span class="serif-accent">stake your reputation on.</span></h2>
+      </div>
+
+      <div class="values-row">
+        <div class="value-item reveal">
+          <h4>Proactive, not reactive</h4>
+          <p>We move first — flagging issues before they become delays, communicating before you have to ask.</p>
+        </div>
+        <div class="value-item reveal delay-1">
+          <h4>Detail-driven by default</h4>
+          <p>Clean files, complete records, audit-ready documentation. The boring work, done right, every time.</p>
+        </div>
+        <div class="value-item reveal delay-2">
+          <h4>Relationship-protective</h4>
+          <p>Every borrower, agent, and title contact represents your reputation. We treat them that way.</p>
+        </div>
+        <div class="value-item reveal">
+          <h4>Multi-disciplinary view</h4>
+          <p>Mortgage, real estate, and title experience means we see how every piece of the deal connects.</p>
+        </div>
+        <div class="value-item reveal delay-1">
+          <h4>Compliance-aware</h4>
+          <p>Beyond the file, we support call reports, NMLS, and state requirements that keep your business healthy.</p>
+        </div>
+        <div class="value-item reveal delay-2">
+          <h4>Scalable by design</h4>
+          <p>Per-file, contract, or overflow — the engagement scales to your pipeline, not the other way around.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section>
+    <div class="container">
+      <div class="cta-block reveal">
+        <span class="eyebrow" style="color: var(--gold-warm);">Let's connect</span>
+        <h2>Want to see what <span class="accent">cleaner closings</span> feel like?</h2>
+        <p>The fastest way to feel the difference is to send us a file. Or schedule a call to talk through your pipeline.</p>
+        <div class="btn-row">
+          <a href="contact.html#submit-loan" class="btn btn-gold btn-arrow">Submit a Loan</a>
+          <a href="contact.html" class="btn btn-secondary">Schedule a Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a href="index.html" class="brand" aria-label="Star Processing">
+            <img src="1.png" alt="Star Processing & Compliance Services" class="brand-logo" />
+          </a>
+          <p class="footer-tagline">Mortgage processing &amp; compliance services for loan officers and brokers who close clean.</p>
+          <p class="footer-disclaimer">
+            Stephenie Tocado · Owner<br/>
+            13230 Ballantyne Corp Place, Charlotte, NC 28277<br/>
+            NMLS #2636616 · Licensed in North Carolina &amp; South Carolina
+          </p>
+        </div>
+        <div>
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Full-Service Processing</a></li>
+            <li><a href="services.html">Condition Management</a></li>
+            <li><a href="services.html">Compliance Support</a></li>
+            <li><a href="services.html">Overflow Support</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get In Touch</h4>
+          <ul>
+            <li><a href="contact.html#submit-loan">Submit a Loan</a></li>
+            <li><a href="contact.html">Schedule a Call</a></li>
+            <li><a href="mailto:Stephenie@star-processing.com">Stephenie@star-processing.com</a></li>
+            <li><a href="tel:+17046613414">704-661-3414</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Star Processing &amp; Compliance Services. All rights reserved.</span>
+        <span>star-processing.com</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

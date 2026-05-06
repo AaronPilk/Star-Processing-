@@ -2395,7 +2395,7 @@ section {
 
   .hero h1 { margin-top: 28px; }
 
-  .hero-content { gap: 32px; }
+  .hero-content { gap: 24px; }
 
   .hero-cta { width: 100%; }
   .hero-cta-row {
@@ -2408,16 +2408,44 @@ section {
     justify-content: center;
   }
 
+  /* Hide the big duplicate logo in hero on mobile — nav logo is enough */
+  .hero-visual .hero-logo,
+  .hero-visual::before { display: none; }
+  .hero-visual { padding-top: 0; }
+
   .hero-visual .hero-meta {
-    margin-top: 32px;
+    margin-top: 8px;
     padding-top: 24px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    border-top: 1px solid var(--line);
+  }
+
+  .hero-visual .hero-stat {
+    gap: 4px;
+  }
+
+  .hero-visual .hero-stat-num {
+    font-size: 0.95rem !important;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .hero-visual .hero-stat-num .accent {
+    font-size: 1rem;
+  }
+
+  .hero-visual .hero-stat-label {
+    font-size: 9.5px !important;
+    letter-spacing: 0.08em !important;
+    line-height: 1.35;
   }
 
   /* Hide scroll indicator on small screens — saves space */
   .scroll-indicator { display: none; }
 
-  /* Stats vertical on small phones */
-  .hero-stat-num { font-size: 1.4rem !important; }
+  /* Stats — handled above for hero-visual; legacy fallback */
+  .hero-stat-num { font-size: 1.4rem; }
 
   /* Display headline tighter on phones */
   .display { font-size: clamp(2.1rem, 9vw, 3rem); line-height: 1.05; }

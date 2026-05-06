@@ -840,6 +840,13 @@ section {
   }
 }
 
+/* Variant when portrait is removed — single-column, max-width content */
+.founder-grid.founder-grid-noportrait {
+  grid-template-columns: 1fr;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
 .founder-portrait {
   position: relative;
   aspect-ratio: 4/5;
